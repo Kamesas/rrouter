@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 class Toolbar extends Component {
   state = {
@@ -8,13 +8,15 @@ class Toolbar extends Component {
   render() {
     return (
       <div>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/books">Books</Link>
+        <NavLink exact to="/">
+          Home
+        </NavLink>
+        <NavLink to="/about">About</NavLink>
+        <NavLink to="/books">Books</NavLink>
         {this.state.user ? (
-          <Link to="/logout">Logout</Link>
+          <NavLink to="/logout">Logout</NavLink>
         ) : (
-          <Link to="/login">Login</Link>
+          <NavLink to="/login">Login</NavLink>
         )}
       </div>
     );
