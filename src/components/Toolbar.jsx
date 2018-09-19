@@ -7,16 +7,24 @@ class Toolbar extends Component {
   };
   render() {
     return (
-      <div>
-        <NavLink exact to="/">
+      <div className="toolbarLinks">
+        <NavLink activeClassName="activeLink" exact to="/">
           Home
         </NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/books">Books</NavLink>
+        <NavLink activeClassName="activeLink" to="/about">
+          About
+        </NavLink>
+        <NavLink activeClassName="activeLink" to="/books">
+          Books
+        </NavLink>
         {this.state.user ? (
-          <NavLink to="/logout">Logout</NavLink>
+          <NavLink activeClassName="activeLink" to="/logout">
+            Logout
+          </NavLink>
         ) : (
-          <NavLink to="/login">Login</NavLink>
+          <NavLink activeClassName="activeLink" to="/login">
+            Login
+          </NavLink>
         )}
       </div>
     );
