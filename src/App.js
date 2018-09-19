@@ -8,6 +8,8 @@ import SideNav from "./components/SideNav";
 import About from "./pages/About";
 import Login from "./pages/Login";
 import Book from "./pages/Book";
+import Games from "./pages/Games";
+import Calculators from "./pages/Calculators";
 import NotFound from "./pages/NotFound";
 
 class App extends Component {
@@ -21,7 +23,8 @@ class App extends Component {
             <Route path="/books" component={SideNav} />
             <Switch>
               <Route exact path="/" component={Home} />
-
+              <Route exact path="/games" component={Games} />
+              <Route exact path="/calculators" component={Calculators} />
               <Route exact path="/books/:topic?" component={Books} />
               <Route path="/books/:topic/:book" component={Book} />
               <Route path="/about" component={About} />

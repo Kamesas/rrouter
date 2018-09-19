@@ -11,6 +11,12 @@ class Toolbar extends Component {
         <NavLink activeClassName="activeLink" exact to="/">
           Home
         </NavLink>
+        <NavLink activeClassName="activeLink" exact to="/games">
+          Games
+        </NavLink>
+        <NavLink activeClassName="activeLink" exact to="/calculators">
+          Calculators
+        </NavLink>
         <NavLink activeClassName="activeLink" to="/about">
           About
         </NavLink>
