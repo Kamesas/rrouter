@@ -3,15 +3,17 @@ import Square from "./Square";
 
 class Board extends Component {
   renderSquare(i) {
-    return <Square value={i} onClick={() => console.log("square --- ", i)} />;
+    return (
+      <Square
+        value={this.props.squares[i]}
+        onClick={() => this.props.onClick(i)}
+      />
+    );
   }
 
   render() {
-    const status = "Next player: X";
-
     return (
       <div>
-        <div className="status">{status}</div>
         <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
