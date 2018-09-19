@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Card({ book }) {
   return (
@@ -16,7 +17,7 @@ function Card({ book }) {
       </div>
 
       <section>
-        <a href={`/books/${book.topic}/${book.slug}`}>Подробнее</a>
+        <Link to={`/books/${book.topic}/${book.slug}`}>Подробнее</Link>
       </section>
     </div>
   );
