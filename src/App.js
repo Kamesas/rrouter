@@ -21,8 +21,8 @@ class App extends Component {
             <Route path="/books" component={SideNav} />
             <Switch>
               <Route exact path="/" component={Home} />
-              <Route exact path="/books" component={Books} />
-              <Route path="/books/:topic" component={Books} />
+
+              <Route exact path="/books/:topic?" component={Books} />
               <Route path="/books/:topic/:book" component={Book} />
               <Route path="/about" component={About} />
               <Route path="/login" component={Login} />

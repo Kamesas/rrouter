@@ -3,7 +3,9 @@ import Card from "../components/Card";
 import data from "../data/books.json";
 
 function Books({ match }) {
-  const books = data.filter(book => book.topic === match.params.topic);
+  const books = match.params.topic
+    ? data.filter(book => book.topic === match.params.topic)
+    : data;
   return (
     <div className="books">
       {books.map((book, index) => (
