@@ -33,6 +33,27 @@ class TicTacToe extends Component {
     console.log(this.state.stepNum);
   }
 
+  historySteps() {
+    return this.state.history.map((step, move) => {
+      const desc = move ? "Move #" + move : "Game start";
+
+      return (
+        <li key={move}>
+          <a href="#" onClick={() => this.jumpTo(move)}>
+            {desc}
+          </a>{" "}
+        </li>
+      );
+    });
+  }
+
+  jumpTo(step) {
+    this.setState({
+      stepNum: step,
+      playerX: step % 2 ? false : true
+    });
+  }
+
   render() {
     const { playerX, stepNum, history } = this.state;
     const current = history[stepNum];
@@ -49,6 +70,7 @@ class TicTacToe extends Component {
       <div>
         <div className="status">{player}</div>
         <Board squares={current.squares} onClick={i => this.handleClick(i)} />
+        <div className="hostory">{this.historySteps()}</div>
       </div>
     );
   }
