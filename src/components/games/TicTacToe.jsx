@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Board from "./tictactoe/Board";
+import calculateWinner from "./tictactoe/calculateWinner";
 import "./tictactoe/styles.css";
 
 class TicTacToe extends Component {
@@ -18,6 +19,10 @@ class TicTacToe extends Component {
     const current = history[history.length - 1];
     const squares = current.squares.slice();
 
+    if (calculateWinner(squares) || squares[i]) {
+      return;
+    }
+
     squares[i] = playerX ? "X" : "O";
 
     this.setState({
@@ -31,7 +36,14 @@ class TicTacToe extends Component {
   render() {
     const { playerX, stepNum, history } = this.state;
     const current = history[stepNum];
-    const player = "Ходит: " + (playerX ? "X" : "Y");
+    const winner = calculateWinner(current.squares);
+
+    let player;
+    if (winner) {
+      player = "WInner is ---" + winner;
+    } else {
+      player = "Ходит: " + (playerX ? "X" : "Y");
+    }
 
     return (
       <div>
