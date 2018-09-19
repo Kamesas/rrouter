@@ -14,15 +14,24 @@ class TicTacToe extends Component {
   };
 
   handleClick(i) {
-    console.log("handleClick", i);
+    const { playerX, history } = this.state;
+    const current = history[history.length - 1];
+    const squares = current.squares.slice();
+
+    squares[i] = playerX ? "X" : "O";
+
+    this.setState({
+      playerX: !this.state.playerX,
+      history: history.concat([{ squares: squares }]),
+      stepNum: this.state.stepNum + 1
+    });
+    console.log(this.state.stepNum);
   }
 
   render() {
     const { playerX, stepNum, history } = this.state;
     const current = history[stepNum];
     const player = "Ходит: " + (playerX ? "X" : "Y");
-    console.log("history ---", this.state.history);
-    console.log("current --- ", current);
 
     return (
       <div>
