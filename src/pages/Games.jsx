@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import TicTacToe from "../components/games/TicTacToe";
 
 class Games extends Component {
   state = {};
   render() {
-    return <div>Games</div>;
+    return (
+      <div>
+        <TicTacToe />
+      </div>
+    );
   }
 }
 
