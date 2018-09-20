@@ -13,11 +13,16 @@ class NotesApp extends Component {
       { id: 3, color: "red", text: "Therd note !!!" }
     ]
   };
+
+  handleNoteApp = newNote => {
+    this.setState({ notes: [newNote, ...this.state.notes] });
+  };
+
   render() {
     return (
       <div className="noteApp">
         <h1>Notes App</h1>
-        <NotesEditor />
+        <NotesEditor onNoteAdd={this.handleNoteApp} />
         <NotesGrid notes={this.state.notes} />
       </div>
     );
