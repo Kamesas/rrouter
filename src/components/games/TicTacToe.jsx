@@ -39,7 +39,7 @@ class TicTacToe extends Component {
 
       return (
         <li key={move}>
-          <a href="#" onClick={() => this.jumpTo(move)}>
+          <a href="/" onClick={() => this.jumpTo(move)}>
             {desc}
           </a>{" "}
         </li>
