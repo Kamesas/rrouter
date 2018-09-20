@@ -3,19 +3,28 @@ import NotesEditor from "./notesApp/NotesEditor";
 import NotesGrid from "./notesApp/NotesGrid";
 import "./notesApp/style.css";
 
-const NOTES = [{ id: 1, color: "yellow", text: "First note !" }];
+// const NOTES = [
+//   { id: 1, color: "yellow", text: "First note !" },
+//   { id: 2, color: "green", text: "Second note !!" },
+//   { id: 3, color: "red", text: "Therd note !!!" }
+// ];
 
 class NotesApp extends Component {
   state = {
-    notes: [
-      { id: 1, color: "yellow", text: "First note !" },
-      { id: 2, color: "green", text: "Second note !!" },
-      { id: 3, color: "red", text: "Therd note !!!" }
-    ]
+    notes: []
   };
 
   handleNoteApp = newNote => {
-    this.setState({ notes: [newNote, ...this.state.notes] });
+    this.setState(
+      { notes: [newNote, ...this.state.notes] },
+      this.saveToLocalStorage
+    );
+  };
+
+  saveToLocalStorage = () => {
+    const notes = JSON.stringify(this.state.notes);
+
+    localStorage.setItem("notes", notes);
   };
 
   render() {
