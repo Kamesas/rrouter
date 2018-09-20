@@ -11,6 +11,7 @@ import Book from "./pages/Book";
 import Games from "./pages/Games";
 import Calculators from "./pages/Calculators";
 import NotFound from "./pages/NotFound";
+import Notes from "./pages/Notes.jsx";
 
 class App extends Component {
   render() {
@@ -24,6 +25,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={Home} />
               <Route path="/games" component={Games} />
+              <Route path="/notes" component={Notes} />
               <Route path="/calculators" component={Calculators} />
               <Route exact path="/books/:topic?" component={Books} />
               <Route path="/books/:topic/:book" component={Book} />
