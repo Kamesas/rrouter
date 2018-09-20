@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import Note from "./Note";
 
 class NotesGrid extends Component {
-  state = {};
   render() {
-    const { notes } = this.props;
+    const { notes, onNoteDelete } = this.props;
     return (
       <div className="noteGrid">
         {notes.map(note => (
@@ -13,6 +12,8 @@ class NotesGrid extends Component {
             id={note.id}
             color={note.color}
             text={note.text}
+            //onDelete={() => onNoteDelete(note.id)}
+            onDelete={onNoteDelete}
           />
         ))}
       </div>

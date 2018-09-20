@@ -17,8 +17,12 @@ class NotesEditor extends Component {
       color: DEFAULT_COLOR
     };
     this.props.onNoteAdd(newNote);
-    this.setState({ text: "" });
+    this.clearValue();
   };
+
+  clearValue() {
+    this.setState({ text: "" });
+  }
 
   render() {
     return (

@@ -26,6 +26,15 @@ class NotesApp extends Component {
     localStorage.setItem("notes", notes);
   };
 
+  handleNoteDelete = noteId => {
+    this.setState(
+      {
+        notes: this.state.notes.filter(note => note.id !== noteId)
+      },
+      this.saveToLocalStorage
+    );
+  };
+
   componentDidMount() {
     const savedNotes = JSON.parse(localStorage.getItem("notes"));
     if (savedNotes) {
@@ -38,7 +47,10 @@ class NotesApp extends Component {
       <div className="noteApp">
         <h1>Notes App</h1>
         <NotesEditor onNoteAdd={this.handleNoteApp} />
-        <NotesGrid notes={this.state.notes} />
+        <NotesGrid
+          notes={this.state.notes}
+          onNoteDelete={this.handleNoteDelete}
+        />
       </div>
     );
   }
