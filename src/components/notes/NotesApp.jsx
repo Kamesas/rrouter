@@ -23,9 +23,15 @@ class NotesApp extends Component {
 
   saveToLocalStorage = () => {
     const notes = JSON.stringify(this.state.notes);
-
     localStorage.setItem("notes", notes);
   };
+
+  componentDidMount() {
+    const savedNotes = JSON.parse(localStorage.getItem("notes"));
+    if (savedNotes) {
+      this.setState({ notes: savedNotes });
+    }
+  }
 
   render() {
     return (
