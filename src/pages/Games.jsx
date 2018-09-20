@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TicTacToe from "../components/games/TicTacToe";
-import TicTacToe2 from "../components/games/TicTacToe2";
+//import TicTacToe2 from "../components/games/TicTacToe2";
 import "./styles/style.css";
 
 class Games extends Component {
