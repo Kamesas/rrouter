@@ -3,7 +3,12 @@ import React, { Component } from "react";
 class Note extends Component {
   state = {};
   render() {
-    return <li>{this.props.note}</li>;
+    const { id, color, text } = this.props;
+    return (
+      <div id={id} style={{ background: color }} className="note">
+        {text}
+      </div>
+    );
   }
 }
 

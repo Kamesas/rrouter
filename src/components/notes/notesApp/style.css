@@ -1,0 +1,50 @@
+.noteApp {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.noteApp h1 {
+  text-align: center;
+}
+
+.noteEditor {
+  display: flex;
+  width: 60%;
+  justify-content: center;
+  position: relative;
+  margin: 10px auto 30px;
+}
+
+.noteEditor textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  box-shadow: 1px 1px 6px 1px #17e130;
+}
+
+.noteEditor button {
+  position: absolute;
+  padding: 5px 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: #fff;
+  border: 2px solid #33d625;
+  border-radius: 10px;
+  bottom: 10px;
+  right: 10px;
+}
+
+.noteGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.noteGrid div {
+  width: 285px;
+  height: 200px;
+  padding: 10px;
+  box-shadow: 0 0 3px #000;
+}

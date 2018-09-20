@@ -5,7 +5,7 @@ class Notes extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <div style={{ width: "100%" }}>
         <NotesApp />
       </div>
     );

@@ -6,9 +6,14 @@ class NotesGrid extends Component {
   render() {
     const { notes } = this.props;
     return (
-      <div>
+      <div className="noteGrid">
         {notes.map(note => (
-          <Note key={note.id} note={note.text} />
+          <Note
+            key={note.id}
+            id={note.id}
+            color={note.color}
+            text={note.text}
+          />
         ))}
       </div>
     );
