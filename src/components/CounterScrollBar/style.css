@@ -1,0 +1,43 @@
+.scrollBar {
+  width: 1200px;
+  height: 40px;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #000;
+}
+
+.scrollBar .childBar {
+  display: block;
+  height: 40px;
+  background-color: grey;
+}
+
+.scrollBar h2 {
+  line-height: 40px;
+  margin: 0;
+  position: absolute;
+  left: 48%;
+}
+
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.counter button {
+  margin: 20px;
+  padding: 0 10px;
+  background-color: grey;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.counter .procent {
+  margin: 20px;
+}
+/*# sourceMappingURL=style.css.map */
