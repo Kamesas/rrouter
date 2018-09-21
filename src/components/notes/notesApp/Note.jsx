@@ -9,9 +9,13 @@ class Note extends Component {
     //   text: PropTypes.string
     // }).isRequired
     color: PropTypes.string,
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string,
     id: PropTypes.number.isRequired,
-    onDelete: PropTypes.func
+    onDelete: PropTypes.func.isRequired
+  };
+
+  static defaultProps = {
+    color: "yellow"
   };
 
   handleDelete = () => {
