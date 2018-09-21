@@ -10,6 +10,8 @@
   display: block;
   height: 40px;
   background-color: grey;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
 }
 
 .scrollBar h2 {
