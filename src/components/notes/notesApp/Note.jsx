@@ -1,6 +1,19 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Note extends Component {
+  static propTypes = {
+    // article: PropTypes.shape({
+    //   id: PropTypes.string.isRequired,
+    //   title: PropTypes.string.isRequired,
+    //   text: PropTypes.string
+    // }).isRequired
+    color: PropTypes.string,
+    text: PropTypes.string.isRequired,
+    id: PropTypes.number.isRequired,
+    onDelete: PropTypes.func
+  };
+
   handleDelete = () => {
     this.props.onDelete(this.props.id);
   };
