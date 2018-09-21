@@ -5,10 +5,11 @@ const permissionRequired = requiredLevel => Component => {
 
   return class extends React.Component {
     render() {
+      console.log(this.props);
       if (user.level !== "admin" && requiredLevel === "admin") {
         return null;
       } else {
-        return <Component {...this.props} />;
+        return <Component user={user} {...this.props} />;
       }
     }
   };
