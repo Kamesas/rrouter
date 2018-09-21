@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function permissionRequired(Component, requiredLevel) {
+const permissionRequired = requiredLevel => Component => {
   const user = JSON.parse(localStorage.user);
 
   return class extends React.Component {
@@ -12,6 +12,8 @@ export default function permissionRequired(Component, requiredLevel) {
       }
     }
   };
-}
+};
+
+export default permissionRequired;
 
 //localStorage.user = JSON.stringify({level: 'admin', name: 'Vasja'});
