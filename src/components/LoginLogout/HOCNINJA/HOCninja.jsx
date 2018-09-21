@@ -9,7 +9,7 @@ class HOCninja extends Component {
       <div>
         <h3> HOC</h3>
         <Demo1 />
-        <Demo2 />
+        <Demo2 massage="COMPONENT" />
       </div>
     );
   }

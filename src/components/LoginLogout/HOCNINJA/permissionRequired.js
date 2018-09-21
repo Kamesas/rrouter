@@ -8,7 +8,7 @@ const permissionRequired = requiredLevel => Component => {
       if (user.level !== "admin" && requiredLevel === "admin") {
         return null;
       } else {
-        return <Component />;
+        return <Component {...this.props} />;
       }
     }
   };
