@@ -1,9 +1,14 @@
 import React, { Component } from "react";
+import LoginLogout from "../components/LoginLogout/LoginLogout";
 
 class Login extends Component {
   state = {};
   render() {
-    return <div>Login</div>;
+    return (
+      <div>
+        <LoginLogout />
+      </div>
+    );
   }
 }
 
