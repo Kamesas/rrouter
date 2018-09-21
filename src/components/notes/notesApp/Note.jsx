@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import PassProps from "./HOC/PassProps";
 
 class Note extends Component {
   static propTypes = {
@@ -8,6 +9,7 @@ class Note extends Component {
     //   title: PropTypes.string.isRequired,
     //   text: PropTypes.string
     // }).isRequired
+    title: PropTypes.node,
     color: PropTypes.string,
     text: PropTypes.string,
     id: PropTypes.number.isRequired,
@@ -26,6 +28,9 @@ class Note extends Component {
     const { id, color, text } = this.props;
     return (
       <div id={id} style={{ background: color }} className="note">
+        <p>
+          <strong>{this.props.title}</strong>
+        </p>
         {text}
         <span className="delete" onClick={this.handleDelete}>
           X
@@ -35,4 +40,4 @@ class Note extends Component {
   }
 }
 
-export default Note;
+export default PassProps({ title: "NOTE!" }, Note);
