@@ -19,6 +19,7 @@ class NotesGrid extends Component {
           <Note
             key={note.id}
             id={note.id}
+            color={note.color}
             text={note.text}
             onDelete={onNoteDelete}
           />
