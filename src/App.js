@@ -9,6 +9,7 @@ import About from "./pages/About";
 import Login from "./pages/Login";
 import Book from "./pages/Book";
 import Games from "./pages/Games";
+import SimpleRedux from "./pages/SimpleRedux";
 import CounterScrollBar from "./pages/CounterScrollBar";
 import Calculators from "./pages/Calculators";
 import NotFound from "./pages/NotFound";
@@ -28,6 +29,7 @@ class App extends Component {
               <Route path="/games" component={Games} />
               <Route path="/notes" component={Notes} />
               <Route path="/counterScrollBar" component={CounterScrollBar} />
+              <Route path="/simpleRedux" component={SimpleRedux} />
               <Route path="/calculators" component={Calculators} />
               <Route exact path="/books/:topic?" component={Books} />
               <Route path="/books/:topic/:book" component={Book} />

@@ -18,7 +18,10 @@ class Toolbar extends Component {
           Notes
         </NavLink>
         <NavLink activeClassName="activeLink" to="/counterScrollBar">
-          CounterScrollBar
+          CounPrBar
+        </NavLink>
+        <NavLink activeClassName="activeLink" to="/simpleRedux">
+          SimpleRedux
         </NavLink>
         <NavLink activeClassName="activeLink" exact to="/calculators">
           Calculators
