@@ -1,6 +1,32 @@
 import React, { Component } from "react";
 import "./style.css";
 
+import { createStore } from "redux";
+
+function todos(state = [], action) {
+  switch (action.type) {
+    case "ADD_TODO":
+      //return state.concat([action.text]);
+      return [...state, action.text];
+    default:
+      return state;
+  }
+}
+
+const store = createStore(todos, ["Use Redux"]);
+
+store.dispatch({
+  type: "ADD_TODO",
+  text: "Read the docs"
+});
+
+store.dispatch({
+  type: "ADD_TODO",
+  text: "test task"
+});
+
+console.log(store.getState());
+
 class CountScrollBar extends Component {
   state = {
     procent: 0
@@ -19,6 +45,7 @@ class CountScrollBar extends Component {
   };
 
   render() {
+    console.log(store.getState());
     return (
       <div>
         <div className="counter">
