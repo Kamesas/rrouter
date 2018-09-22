@@ -44,18 +44,14 @@ class CountScrollBar extends Component {
     store.dispatch({
       type: "UP_PROCENT"
     });
-    this.setState({
-      procent: this.state.procent + 5
-    });
+    this.setState({ procent: store.getState() });
   };
 
   minus = () => {
     store.dispatch({
       type: "DOWN_PROCENT"
     });
-    this.setState({
-      procent: this.state.procent - 5
-    });
+    this.setState({ procent: store.getState() });
   };
 
   render() {
