@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CountScrollBar from "./components/CountScrollBar";
+import CountScrollBar2 from "./components/CountScrollBar2";
 
 class SimpleRedux extends Component {
   state = {};
@@ -7,7 +7,7 @@ class SimpleRedux extends Component {
     return (
       <div className="simpleRedux">
         SImple Redux
-        <CountScrollBar />
+        <CountScrollBar2 />
       </div>
     );
   }

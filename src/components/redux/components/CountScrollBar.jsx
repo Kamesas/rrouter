@@ -20,7 +20,7 @@ store.dispatch({
   text: "Read the docs"
 }); */
 
-function counter(state = null, action) {
+function counter(state = 0, action) {
   switch (action.type) {
     case "UP_PROCENT":
       return state + 1;
@@ -32,8 +32,6 @@ function counter(state = null, action) {
 }
 
 const store = createStore(counter);
-
-console.log(store.getState());
 
 class CountScrollBar extends Component {
   state = {
