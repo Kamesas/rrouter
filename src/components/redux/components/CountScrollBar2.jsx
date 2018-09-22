@@ -16,6 +16,7 @@ class CountScrollBar extends Component {
   };
 
   render() {
+    console.log("testStore", this.props.testStore);
     return (
       <div>
         <div className="counter">
@@ -33,6 +34,8 @@ class CountScrollBar extends Component {
 }
 
 export default connect(
-  state => ({}),
+  state => ({
+    testStore: state
+  }),
   dispatch => ({})
 )(CountScrollBar);

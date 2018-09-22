@@ -23,9 +23,7 @@ store.dispatch({
   payload: "two"
 });
 
-store.subscribe(() => console.log(store));
-
-console.log(store.getState());
+console.log("index ---", store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
