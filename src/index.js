@@ -5,23 +5,21 @@ import "./index.css";
 import registerServiceWorker from "./registerServiceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
+import rootReducer from "./reducers/rootReducer";
 
-function testReducer(state = {}, action) {
+/* function testReducer(state = {}, action) {
   switch (action.type) {
     case "ADD_NOTE":
-      return [...state, action.payload];
+      return { ...state, notes: action.payload };
     case "ADD_TASK":
       return [...state, action.payload];
-    case "COUNT_UP":
-      return state.count + 1;
-
     default:
       return [...state];
   }
-}
+} */
 
 const store = createStore(
-  testReducer,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

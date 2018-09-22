@@ -4,17 +4,7 @@ import { connect } from "react-redux";
 
 class CountScrollBar extends Component {
   state = {
-    procent: 0,
     valueTask: ""
-  };
-
-  plus = () => {
-    this.setState({ procent: this.state.procent + 1 });
-    this.props.onPlusCount();
-  };
-
-  minus = () => {
-    this.setState({ procent: this.state.procent - 1 });
   };
 
   onChangeValue = e => {
@@ -32,18 +22,8 @@ class CountScrollBar extends Component {
   render() {
     return (
       <div>
-        <div className="counter">
-          <button id="mines" onClick={this.minus}>
-            -
-          </button>
-          <div className="procent">{this.state.procent}</div>
-          <button id="plus" onClick={this.plus}>
-            +
-          </button>
-        </div>
-        <hr />
         <div className="testStore">
-          <h5>TestStore</h5>
+          <h5>Tasks (redux)</h5>
           <input
             type="text"
             onChange={this.onChangeValue}
@@ -51,7 +31,7 @@ class CountScrollBar extends Component {
           />
           <button onClick={this.addTask}>Add</button>
           <ul>
-            {this.props.testStore.map((item, i) => (
+            {this.props.task.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
           </ul>
@@ -63,14 +43,11 @@ class CountScrollBar extends Component {
 
 export default connect(
   state => ({
-    testStore: state
+    task: state.task
   }),
   dispatch => ({
     onAddTask: task => {
       dispatch({ type: "ADD_TASK", payload: task });
-    },
-    onPlusCount: () => {
-      dispatch({ type: "COUNT_UP" });
     }
   })
 )(CountScrollBar);

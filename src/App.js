@@ -29,7 +29,7 @@ class App extends Component {
               <Route path="/games" component={Games} />
               <Route path="/notes" component={Notes} />
               <Route path="/counterScrollBar" component={CounterScrollBar} />
-              <Route path="/simpleRedux" component={SimpleRedux} />
+              <Route path="/sampleRedux" component={SimpleRedux} />
               <Route path="/calculators" component={Calculators} />
               <Route exact path="/books/:topic?" component={Books} />
               <Route path="/books/:topic/:book" component={Book} />

@@ -1,13 +1,16 @@
 import React, { Component } from "react";
-import CountScrollBar2 from "./components/CountScrollBar2";
+import Counter from "./components/Counter";
+import Task from "./components/Task";
 
 class SimpleRedux extends Component {
   state = {};
   render() {
     return (
       <div className="simpleRedux">
-        SImple Redux
-        <CountScrollBar2 />
+        Sample Redux
+        <Counter />
+        <hr />
+        <Task />
       </div>
     );
   }
