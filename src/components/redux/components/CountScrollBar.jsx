@@ -3,27 +3,35 @@ import "./style.css";
 
 import { createStore } from "redux";
 
-function todos(state = [], action) {
+/* function todos(state = [], action) {
   switch (action.type) {
     case "ADD_TODO":
       //return state.concat([action.text]);
       return [...state, action.text];
+    case "UP_PROCENT":
+      return state + 1;
     default:
       return state;
   }
 }
 
-const store = createStore(todos, ["Use Redux"]);
-
 store.dispatch({
   type: "ADD_TODO",
   text: "Read the docs"
-});
+}); */
 
-store.dispatch({
-  type: "ADD_TODO",
-  text: "test task"
-});
+function counter(state = null, action) {
+  switch (action.type) {
+    case "UP_PROCENT":
+      return state + 1;
+    case "DOWN_PROCENT":
+      return state - 1;
+    default:
+      return state;
+  }
+}
+
+const store = createStore(counter);
 
 console.log(store.getState());
 
@@ -33,12 +41,18 @@ class CountScrollBar extends Component {
   };
 
   plus = () => {
+    store.dispatch({
+      type: "UP_PROCENT"
+    });
     this.setState({
       procent: this.state.procent + 5
     });
   };
 
   minus = () => {
+    store.dispatch({
+      type: "DOWN_PROCENT"
+    });
     this.setState({
       procent: this.state.procent - 5
     });
