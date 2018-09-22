@@ -13,21 +13,17 @@ function testReducer(state = {}, action) {
     case "ADD_TASK":
       return [...state, action.payload];
     case "COUNT_UP":
-      return [...state, "plus"];
+      return state.count + 1;
 
     default:
       return [...state];
   }
 }
 
-const store = createStore(testReducer);
-
-store.dispatch({
-  type: "ADD_NOTE",
-  payload: "two"
-});
-
-console.log("index --- ", store.getState());
+const store = createStore(
+  testReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 ReactDOM.render(
   <Provider store={store}>

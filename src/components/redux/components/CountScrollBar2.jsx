@@ -10,6 +10,7 @@ class CountScrollBar extends Component {
 
   plus = () => {
     this.setState({ procent: this.state.procent + 1 });
+    this.props.onPlusCount();
   };
 
   minus = () => {
