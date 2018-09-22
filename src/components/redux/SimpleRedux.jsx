@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Counter from "./components/Counter";
 import Task from "./components/Task";
+import NoteRedux from "./components/NoteRedux";
 
 class SimpleRedux extends Component {
   state = {};
@@ -11,6 +12,8 @@ class SimpleRedux extends Component {
         <Counter />
         <hr />
         <Task />
+        <hr />
+        <NoteRedux />
       </div>
     );
   }

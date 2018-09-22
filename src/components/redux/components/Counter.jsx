@@ -12,7 +12,6 @@ class CountScrollBar extends Component {
   };
 
   render() {
-    console.log(this.props.numberCount);
     return (
       <div>
         <div className="counter">

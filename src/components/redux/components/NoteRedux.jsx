@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./style.css";
 import { connect } from "react-redux";
+import { addNote } from "../../actions/actionsNote";
 
-class CountScrollBar extends Component {
+class NoteRedux extends Component {
   state = {
     valueTask: ""
   };
@@ -13,7 +14,7 @@ class CountScrollBar extends Component {
 
   addTask = () => {
     if (this.state.valueTask) {
-      this.props.onAddTask(this.state.valueTask);
+      this.props.addNote(this.state.valueTask);
       this.setState({ valueTask: "" });
     }
   };
@@ -22,7 +23,7 @@ class CountScrollBar extends Component {
     return (
       <div>
         <div className="testStore">
-          <h5>Tasks (redux)</h5>
+          <h5>Note (redux)</h5>
           <input
             type="text"
             onChange={this.onChangeValue}
@@ -30,7 +31,7 @@ class CountScrollBar extends Component {
           />
           <button onClick={this.addTask}>Add</button>
           <ul>
-            {this.props.task.map((item, i) => (
+            {this.props.note.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
           </ul>
@@ -40,13 +41,15 @@ class CountScrollBar extends Component {
   }
 }
 
+const mapStateToProps = state => ({
+  note: state.note
+});
+
+const mapDispatchToProps = dispatch => ({
+  addNote: note => dispatch(addNote(note))
+});
+
 export default connect(
-  state => ({
-    task: state.task
-  }),
-  dispatch => ({
-    onAddTask: task => {
-      dispatch({ type: "ADD_TASK", payload: task });
-    }
-  })
-)(CountScrollBar);
+  mapStateToProps,
+  mapDispatchToProps
+)(NoteRedux);
