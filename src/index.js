@@ -6,10 +6,14 @@ import registerServiceWorker from "./registerServiceWorker";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-function testReducer(state = ["one"], action) {
+function testReducer(state = {}, action) {
   switch (action.type) {
     case "ADD_NOTE":
       return [...state, action.payload];
+    case "ADD_TASK":
+      return [...state, action.payload];
+    case "COUNT_UP":
+      return [...state, "plus"];
 
     default:
       return [...state];
@@ -23,7 +27,7 @@ store.dispatch({
   payload: "two"
 });
 
-console.log("index ---", store.getState());
+console.log("index --- ", store.getState());
 
 ReactDOM.render(
   <Provider store={store}>
