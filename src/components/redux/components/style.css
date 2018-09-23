@@ -1,0 +1,29 @@
+/* .simpleRedux .scrollBar
+  width: 1200px
+  height: 40px
+  padding: 10px
+  margin: 10px auto
+  border: 1px solid #000
+  .childBar */
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.counter button {
+  margin: 20px;
+  padding: 0 10px;
+  background-color: grey;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.counter .procent {
+  margin: 20px;
+}
+/*# sourceMappingURL=style.css.map */
