@@ -7,17 +7,6 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import rootReducer from "./reducers/rootReducer";
 
-/* function testReducer(state = {}, action) {
-  switch (action.type) {
-    case "ADD_NOTE":
-      return { ...state, notes: action.payload };
-    case "ADD_TASK":
-      return [...state, action.payload];
-    default:
-      return [...state];
-  }
-} */
-
 const store = createStore(
   rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
