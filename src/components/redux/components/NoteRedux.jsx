@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 import { connect } from "react-redux";
-import { addNote } from "../../actions/actionsNote";
+import { addNote } from "../../../actions/actionsNote";
 
 class NoteRedux extends Component {
   state = {

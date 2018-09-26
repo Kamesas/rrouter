@@ -13,7 +13,8 @@ import SimpleRedux from "./pages/SimpleRedux";
 import CounterScrollBar from "./pages/CounterScrollBar";
 import Calculators from "./pages/Calculators";
 import NotFound from "./pages/NotFound";
-import Notes from "./pages/Notes.jsx";
+import Notes from "./pages/Notes";
+import ToDo from "./pages/ToDo";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route path="/games" component={Games} />
               <Route path="/notes" component={Notes} />
+              <Route path="/todo" component={ToDo} />
               <Route path="/counterScrollBar" component={CounterScrollBar} />
               <Route path="/sampleRedux" component={SimpleRedux} />
               <Route path="/calculators" component={Calculators} />

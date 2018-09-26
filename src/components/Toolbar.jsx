@@ -17,6 +17,9 @@ class Toolbar extends Component {
         <NavLink activeClassName="activeLink" to="/notes">
           Notes
         </NavLink>
+        <NavLink activeClassName="activeLink" to="/todo">
+          ToDo
+        </NavLink>
         <NavLink activeClassName="activeLink" to="/counterScrollBar">
           CounPrBar
         </NavLink>
