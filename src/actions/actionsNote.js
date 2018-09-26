@@ -1,3 +1,5 @@
+//export const decrement = value => ({ type: "DECREMENT", value });
+
 export const addNote = note => ({ type: "ADD_NOTE", payload: note });
 
 export const AddToDoAppTask = text => ({
@@ -6,4 +8,7 @@ export const AddToDoAppTask = text => ({
   id: Date.now()
 });
 
-export const decrement = value => ({ type: "DECREMENT", value });
+export const toggleToDo = id => ({
+  type: "TOGGLE_TODO",
+  id
+});
